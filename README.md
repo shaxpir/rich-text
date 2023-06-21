@@ -1,5 +1,22 @@
 # Rich Text OT Type [![Build Status](https://travis-ci.org/ottypes/rich-text.svg?branch=master)](https://travis-ci.org/ottypes/rich-text)
 
+## Shaxpir: Why fork
+
+This fork is based on the excellent work in the [Reedsy Fork](https://github.com/reedsy/rich-text) of the same repo.
+
+The reason we're not forking-the-fork, but rather building our own fork is that at Shaxpir we have slightly different needs.
+
+We don't need to attach arbitrary metadata to Delta docs (because we already embed those Delta docs into deeply-nested
+`Json1` objects representing books, chapters, etc, which have their own metadata) so we don't need to use the same
+[DeltaWithMetadata](https://github.com/ottypes/rich-text/commit/9bd0cc43d0ccad9e415f06c7045b7f41e71b41a8)
+objects as Reedsy uses.
+
+But we do need support for [Complex Attributes](https://github.com/quilljs/delta/commit/88174ddac8f1b78bf7d67c7afc3c5b0962c0184d).
+We were previously handling these complex attributes at the application layer in our Blot definitions, but the Reedsy approach
+for handling these attributes directly in the Delta format is much nicer, so we're adopting it too.
+
+## Introduction
+
 An OT Type for rich text documents.
 
 For documentation on the spec this type implements, see [ottypes/docs](https://github.com/ottypes/docs). Rich Text does not implement the optional `invert`, but does implement `normalize`, tranformCursor, `serialize`, and `deserialize`. Please refer to [ottypes/docs](https://github.com/ottypes/docs) for documentation.
