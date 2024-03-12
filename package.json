@@ -1,12 +1,12 @@
 {
   "name": "@shaxpir/rich-text",
-  "version": "5.0.0",
+  "version": "5.0.1",
   "description": "OT type for rich text",
   "author": "Jason Chen <jhchen7@gmail.com>",
   "homepage": "https://github.com/shaxpir/rich-text",
   "main": "index.js",
   "dependencies": {
-    "@shaxpir/quill-delta": "^6.0.0"
+    "@shaxpir/quill-delta": "^6.1.1"
   },
   "devDependencies": {
     "chai": "^4.2.0",
